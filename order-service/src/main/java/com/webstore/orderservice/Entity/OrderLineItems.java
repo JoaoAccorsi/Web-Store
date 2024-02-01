@@ -7,7 +7,7 @@ import lombok.Setter;
 
 import jakarta.persistence.*;
 
-@Table(name = "order_line_items")
+@Table(name = "table_order_line_items")
 @Entity
 @Getter
 @Setter

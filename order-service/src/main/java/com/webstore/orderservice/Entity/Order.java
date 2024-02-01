@@ -5,7 +5,7 @@ import lombok.*;
 import jakarta.persistence.*;
 import java.util.List;
 
-@Table(name = "orders")
+@Table(name = "table_orders")
 @Entity
 @Getter
 @Setter

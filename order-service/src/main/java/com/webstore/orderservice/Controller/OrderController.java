@@ -16,8 +16,8 @@ public class OrderController {
     @PostMapping("/order")
     @ResponseStatus(HttpStatus.CREATED)
     public String createOrder(@RequestBody OrderRequest orderRequest) {
-        log.info("Order created");
         orderService.createOrder(orderRequest);
+        log.info("Order created");
         return "Order Created Successfully";
     }
 }
