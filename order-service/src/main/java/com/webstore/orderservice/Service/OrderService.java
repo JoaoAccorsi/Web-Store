@@ -36,10 +36,10 @@ public class OrderService {
 
         OrderLineItems orderLineItems = new OrderLineItems();
 
-        orderLineItems.setId(orderLineItems.getId());
+        orderLineItems.setId(orderLineItemsDTO.getId());
         orderLineItems.setPrice(orderLineItemsDTO.getPrice());
         orderLineItems.setQuantity(orderLineItemsDTO.getQuantity());
-        orderLineItems.setStockKeepingUnitCode(orderLineItems.getStockKeepingUnitCode());
+        orderLineItems.setStockKeepingUnitCode(orderLineItemsDTO.getStockKeepingUnitCode());
 
         return orderLineItems;
     }
