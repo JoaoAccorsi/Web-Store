@@ -1,32 +1,29 @@
-package com.webstore.orderservice.Entity;
+package com.webstore.inventoryservice.Entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
+import lombok.*;
 import jakarta.persistence.*;
 
-@Table(name = "table_order_line_items")
 @Entity
+@Table(name = "web_store_inventory")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class OrderLineItems {
+public class Inventory {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String productNumber;
-    private String price;
+    private String productTile;
     private Integer quantity;
 
     @Override
     public String toString() {
-        return "OrderLineItems{" +
+        return "Inventory{" +
                 "id=" + id +
                 ", productNumber='" + productNumber + '\'' +
-                ", price=" + price +
+                ", productTile='" + productTile + '\'' +
                 ", quantity=" + quantity +
                 '}';
     }

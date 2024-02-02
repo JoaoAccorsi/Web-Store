@@ -5,6 +5,7 @@ import com.webstore.orderservice.DTO.OrderRequest;
 import com.webstore.orderservice.Entity.Order;
 import com.webstore.orderservice.Entity.OrderLineItems;
 import com.webstore.orderservice.Repository.OrderRepository;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
+@Transactional
 public class OrderService {
 
     private final OrderRepository orderRepository;
@@ -39,7 +41,7 @@ public class OrderService {
         orderLineItems.setId(orderLineItemsDTO.getId());
         orderLineItems.setPrice(orderLineItemsDTO.getPrice());
         orderLineItems.setQuantity(orderLineItemsDTO.getQuantity());
-        orderLineItems.setStockKeepingUnitCode(orderLineItemsDTO.getStockKeepingUnitCode());
+        orderLineItems.setProductNumber(orderLineItemsDTO.getProductNumber());
 
         return orderLineItems;
     }
