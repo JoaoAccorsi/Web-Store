@@ -13,11 +13,11 @@ import org.springframework.web.bind.annotation.*;
 public class OrderController {
 
     private final OrderService orderService;
-    @PostMapping("/order")
+    @PostMapping("webstore/order")
     @ResponseStatus(HttpStatus.CREATED)
     public String createOrder(@RequestBody OrderRequest orderRequest) {
         orderService.createOrder(orderRequest);
         log.info("Order created");
-        return "Order Created Successfully";
+        return "Order Request Received Successfully";
     }
 }

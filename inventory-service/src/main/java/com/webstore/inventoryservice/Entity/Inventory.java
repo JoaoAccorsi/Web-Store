@@ -14,7 +14,7 @@ public class Inventory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String productNumber;
+    private String productId;
     private String productTile;
     private Integer quantity;
 
@@ -22,7 +22,7 @@ public class Inventory {
     public String toString() {
         return "Inventory{" +
                 "id=" + id +
-                ", productNumber='" + productNumber + '\'' +
+                ", productId='" + productId + '\'' +
                 ", productTile='" + productTile + '\'' +
                 ", quantity=" + quantity +
                 '}';

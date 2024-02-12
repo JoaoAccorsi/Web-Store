@@ -57,7 +57,7 @@ public class ProductServiceApplicationTests {
 
 	private ProductRequest getProductRequest(){
 		return ProductRequest.builder().
-				productNumber("2").
+				productId("2").
 				build();
 	}
 }

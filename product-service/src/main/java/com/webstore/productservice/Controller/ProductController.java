@@ -18,18 +18,18 @@ public class ProductController {
 
     public final ProductService productService;
 
-    @PostMapping("/create")
+    @PostMapping("webstore/create")
     @ResponseStatus(HttpStatus.CREATED)
     public String createProduct (@RequestBody ProductRequest productRequest){
         RestTemplate restTemplate = new RestTemplate();
-        String productNumber = productRequest.getProductNumber();
+        String productId = productRequest.getProductId();
 
-        ResponseEntity<ProductDTO> response = restTemplate.getForEntity(String.format("https://fakestoreapi.com/products/%s", productNumber), ProductDTO.class);
+        ResponseEntity<ProductDTO> response = restTemplate.getForEntity(String.format("https://fakestoreapi.com/products/%s", productId), ProductDTO.class);
         productService.saveTheProduct(response.getBody());
         return "Product Created Successfully!";
     }
 
-    @GetMapping("/products")
+    @GetMapping("webstore/products")
     @ResponseStatus(HttpStatus.OK)
     public List<ProductDTO> getAllProducts(){
         return productService.getAllProducts();

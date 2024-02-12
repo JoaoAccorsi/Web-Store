@@ -24,7 +24,7 @@ public class InventoryServiceApplication {
 
 			return args -> {
 				Inventory fakeProduct = new Inventory();
-				fakeProduct.setProductNumber("4");
+				fakeProduct.setProductId("4");
 				fakeProduct.setProductTile("T-shift premium");
 				fakeProduct.setQuantity(10);
 

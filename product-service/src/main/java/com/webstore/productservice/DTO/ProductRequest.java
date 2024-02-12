@@ -10,5 +10,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProductRequest {
-    private String productNumber;
+    private String productId;
 }

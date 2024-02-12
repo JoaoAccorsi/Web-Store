@@ -17,16 +17,16 @@ public class OrderLineItems {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String productNumber;
-    private String price;
+    private String productId;
+    private String productTitle;
     private Integer quantity;
 
     @Override
     public String toString() {
         return "OrderLineItems{" +
                 "id=" + id +
-                ", productNumber='" + productNumber + '\'' +
-                ", price=" + price +
+                ", productId='" + productId + '\'' +
+                ", productTitle='" + productTitle + '\'' +
                 ", quantity=" + quantity +
                 '}';
     }

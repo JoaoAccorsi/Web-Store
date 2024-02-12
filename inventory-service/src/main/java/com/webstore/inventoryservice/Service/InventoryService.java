@@ -1,11 +1,14 @@
 package com.webstore.inventoryservice.Service;
 
+import com.webstore.inventoryservice.DTO.InventoryResponse;
 import com.webstore.inventoryservice.Entity.Inventory;
 import com.webstore.inventoryservice.Repository.InventoryRepository;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -15,12 +18,14 @@ public class InventoryService {
     private final InventoryRepository inventoryRepository;
 
     @Transactional(readOnly = true)
-    public boolean isInStock(String productNumber){
-        List<Inventory> inventoryAll = inventoryRepository.findAll();
+    public List<InventoryResponse> isInStock(List<String> allProductsIdsOfTheOrder){
 
-        for (int i = 0; i < inventoryAll.size(); i ++)
-            if (productNumber.trim().equals(inventoryAll.get(i).getProductNumber().trim()))
-                return true;
-        return false;
+        return inventoryRepository.findByProductIdIn(allProductsIdsOfTheOrder).stream()
+                .map(inventory ->
+                    InventoryResponse.builder()
+                                    .productID(inventory.getProductId())
+                                    .isInStock(inventory.getQuantity() > 0)
+                                    .build()
+                ).toList();
     }
 }

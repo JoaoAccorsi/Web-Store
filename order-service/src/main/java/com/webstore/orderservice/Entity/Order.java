@@ -12,6 +12,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Order {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
