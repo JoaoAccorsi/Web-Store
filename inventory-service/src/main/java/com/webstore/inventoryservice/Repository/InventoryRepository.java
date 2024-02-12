@@ -9,6 +9,4 @@ public interface InventoryRepository extends JpaRepository<Inventory, Long>{
 
     List<Inventory> findAll();
 
-    List<Inventory> findByProductIdIn(List<String> allProductsIdsOfTheOrder);
-
 }

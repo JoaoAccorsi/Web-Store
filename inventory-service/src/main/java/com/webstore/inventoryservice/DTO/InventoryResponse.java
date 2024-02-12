@@ -4,18 +4,21 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.stream.Collectors;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 public class InventoryResponse {
-    private String productID;
+    private String productId;
     private boolean isInStock;
 
     @Override
     public String toString() {
         return "InventoryResponse{" +
-                "productID='" + productID + '\'' +
+                "productID='" + productId + '\'' +
                 ", isInStock=" + isInStock +
                 '}';
     }
