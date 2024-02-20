@@ -4,6 +4,8 @@ Web Store is a Spring Boot Backend Application which manages a web store. It is 
 
 The products are created by [`Fake Store API`](https://fakestoreapi.com/), and stored into MongoDB. Once one order is made, the Inventory Service ensures that the Products exists in the stock. If not, the order in not completed. Both Order and Inventory Services have its data stored into PostgreSQL.
 
+## Architecture:
+
 ## Functionalities:
 
 The program exposes some endpoints:
